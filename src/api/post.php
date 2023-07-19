@@ -78,6 +78,7 @@
 
         public function run(){
             if($this->is_authorized()){
+                //batch upload has the highest priority ... 
                 if($this->is_file_uploaded()){
                     $this->batch_upload();
                 } else {
@@ -99,10 +100,11 @@
             $env_root = "../uploads";
            
             $absolute_path = $env_root . "/" . $newFileName;
-
+            $complete_path = dirname(__DIR__) . "/" . $absolute_path;
+            
             if (move_uploaded_file($file["tmp_name"], $absolute_path)) {
                 $is_upload_ok = true;
-                return ["filename" => $newFileName, "path" => $absolute_path];
+                return ["filename" => $newFileName, "path" => $complete_path];
             } 
 
 
