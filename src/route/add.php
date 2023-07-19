@@ -32,9 +32,10 @@
             <input type="email" name="email" class="form-control" id="email">
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-comment="there are better ways to do this because of time, I think a clear description can still do the trick">
             <label for="address">Address</label>
-            <input type="text" name="address" class="form-control" id="address">
+            <span>It's important to enter your address as described below</span>
+            <input type="text" name="address" placeholder="Street number, City, Region, PostCode" class="form-control" id="address">
         </div>
         
         <div class="referral_color" style="background-color: white;padding: 5px;">
